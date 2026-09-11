@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>VIS Museum of Video Games &amp; Interactive Media • Vertical Infographic Stream</title>
+    <meta name="description" content="Penjelajahan visual komprehensif 990+ konsep agung sejarah dan sains video game: Perangkat Keras &amp; Konsol, Evolusi Genre &amp; Mahakarya, Filsafat Desain &amp; Ludologi, Teknologi Enjin &amp; Grafika, Tokoh Pelopor &amp; Sutradara, Musik &amp; Audio, Kultur &amp; Esports, hingga Ekonomi Industri Gim.">
+    <meta name="theme-color" content="#4F46E5">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- OPEN GRAPH / SOCIAL -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="VIS Museum of Video Games &amp; Interactive Media">
+    <meta property="og:description" content="Penjelajahan visual komprehensif 990+ konsep agung sejarah dan sains video game: Perangkat Keras &amp; Konsol, Evolusi Genre &amp; Mahakarya, Filsafat Desain &amp; Ludologi, Teknologi Enjin &amp; Grafika, Tokoh Pelopor &amp; Sutradara, Musik &amp; Audio, Kultur &amp; Esports, hingga Ekonomi Industri Gim.">
+    <meta property="og:locale" content="id_ID">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- MODULAR STYLES -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/controls.css">
+    <link rel="stylesheet" href="css/categories.css">
+    <link rel="stylesheet" href="css/exhibits.css">
+    <link rel="stylesheet" href="css/wall.css">
+    <link rel="stylesheet" href="css/reader.css">
+    <link rel="stylesheet" href="css/stream.css">
+    <link rel="stylesheet" href="css/toast.css">
+</head>
+<body class="view-home">
+    <div id="homeView">
+        <div class="container">
+            <!-- 3D SPATIAL HERO -->
+            <section class="spatial-hero">
+                <div class="hero-left">
+                    <div class="hero-badge">
+                        <span>990+ VISUAL INFOGRAPHICS • VIDEO GAMES &amp; INTERACTIVE MEDIA</span>
+                    </div>
+                    <h1 class="hero-title">Museum of <span>Video Games</span></h1>
+                    <p class="hero-desc">
+                        Penjelajahan visual komprehensif 990+ konsep agung dunia permainan video dan media interaktif: Evolusi Perangkat Keras &amp; Perang Konsol, Mahakarya Genre Klasik hingga Modern, Prinsip Desain Permainan &amp; Ludologi, Teknologi Enjin Grafika &amp; Fisika, Biografi Para Visioner Gim, Desain Audio &amp; Suara, Fenomena Kultur Komunitas, hingga Ekonomi Industri Gim Global.
+                    </p>
+                </div>
+
+                <!-- 3D INTERACTIVE FAN DECK -->
+                <div class="poster-deck-3d" id="heroPosterDeck">
+                    <!-- Dynamic Top Deck Cards -->
+                </div>
+            </section>
+
+            <!-- CONTROLS TOOLBAR -->
+            <section class="controls-toolbar">
+                <div class="view-tabs">
+                    <button type="button" class="view-tab-btn active" id="tabExhibitsBtn" onclick="switchView('exhibits');">
+                        <span>🏛️</span> <span>Exhibits Grid</span>
+                    </button>
+                    <button type="button" class="view-tab-btn" id="tabWallBtn" onclick="switchView('wall');">
+                        <span>🖼️</span> <span>Full Poster Wall</span>
+                    </button>
+                </div>
+
+                <div class="search-pill-box">
+                    <span style="font-size: 0.9rem; opacity: 0.7;">🔍</span>
+                    <input type="text" id="matrixSearchInput" class="search-pill-input" placeholder="Cari konsep seni rupa, musik, sinema, arsitektur, sastra, mitologi..." oninput="handleSearch(this.value)">
+                </div>
+            </section>
+
+            <!-- CATEGORY FILTER CAPSULES -->
+            <section class="category-capsules" id="categoryCapsules">
+                <!-- Injected via JS -->
+            </section>
+
+            <!-- VIEW 1: EXHIBITS GRID -->
+            <section class="exhibits-grid" id="exhibitsGrid">
+                <!-- Injected via JS -->
+            </section>
+
+            <!-- VIEW 2: POSTER WALL -->
+            <section class="poster-wall-grid" id="posterWallGrid">
+                <!-- Injected via JS -->
+            </section>
+        </div>
+    </div>
+
+    <!-- FULLSCREEN READER VIEW (100% PURE FIT-WIDTH CONTINUOUS STREAM) -->
+    <div id="readerView">
+        <nav class="reader-nav nav-hidden" id="readerNav" onclick="event.stopPropagation();" onpointerdown="event.stopPropagation();">
+            <button type="button" class="nav-back-btn" onclick="closeReader();" title="Kembali ke Galeri">
+                <span>←</span> <span>Kembali</span>
+            </button>
+            <span class="nav-title-text" id="navFolderTitle">Materi Seni &amp; Humaniora</span>
+            
+            <div style="position: relative;">
+                <button type="button" class="nav-picker-btn" id="navPickerBtn" onclick="togglePickerDropdown(event);">
+                    <span id="navPickerLabel">#1 Judul Infografis</span>
+                    <span style="font-size: 0.65rem;">▼</span>
+                </button>
+                <div class="nav-picker-dropdown" id="navPickerDropdown" onclick="event.stopPropagation();">
+                    <div class="picker-header">
+                        <span>PILIH INFOGRAFIS</span>
+                        <span id="pickerTotalBadge">0 Visual</span>
+                    </div>
+                    <div class="picker-list" id="navPickerList"></div>
+                </div>
+            </div>
+
+            <button type="button" class="nav-icon-btn" onclick="toggleFullScreen();" title="Layar Penuh">
+                <span>⛶</span>
+            </button>
+            <button type="button" class="nav-icon-btn" onclick="hideNav();" title="Sembunyikan Navigasi">
+                <span>✕</span>
+            </button>
+        </nav>
+        <main class="doom-feed" id="doomFeed"></main>
+        <div class="restore-toast" id="restoreToast">
+            <span id="restoreToastText">Melanjutkan membaca...</span>
+        </div>
+    </div>
+
+    <!-- MODULAR SCRIPTS -->
+    <script src="js/data.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/components/hero.js"></script>
+    <script src="js/components/categories.js"></script>
+    <script src="js/components/exhibits.js"></script>
+    <script src="js/components/wall.js"></script>
+    <script src="js/components/reader.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
